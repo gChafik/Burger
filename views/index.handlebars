@@ -10,7 +10,7 @@
         {{this.burger_name}}
       </td>
       <td>
-        <form action="/{{this.id}}  ?_method=PUT" method="POST">
+        <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
           <button class="btnColor btn btn-success change-devour" type="submit">Devour it!</button>
         </form>
@@ -30,7 +30,7 @@
         {{this.burger_name}}
       </td>
       <td>
-        <form action="/{{this.id}}  ?_method=PUT" method="POST">
+        <form action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="devoured" value="true">
           <button class="btnColor btn btn-danger delete" type="delete">Delete it!</button>
         </form>
