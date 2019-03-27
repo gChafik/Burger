@@ -3,21 +3,41 @@
 <h2>Burgers that are not devoured!</h2>
 
 <ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devour=true}}
+  <tr>
+   {{#each burgers}}
+    {{#unless this.devoured}}
+      <td>
+        {{this.burger_name}}
+      </td>
+      <td>
+        <form action="/{{this.id}}  ?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button class="btnColor btn btn-success change-devour" type="submit">Devour it!</button>
+        </form>
+      </td>
     {{/unless}}
-  {{/each}}
+   {{/each}}
+  </tr>
 </ul>
 
 <h2>Burgers that are devoured!</h2>
 
 <ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devour=false}}
-    {{/if}}
-  {{/each}}
+  <tr>
+   {{#each burgers}}
+    {{#unless this.devoured}}
+      <td>
+        {{this.burger_name}}
+      </td>
+      <td>
+        <form action="/{{this.id}}  ?_method=PUT" method="POST">
+          <input type="hidden" name="devoured" value="true">
+          <button class="btnColor btn btn-danger delete" type="delete">Delete it!</button>
+        </form>
+      </td>
+    {{/unless}}
+   {{/each}}
+  </tr>
 </ul>
 
 <h2>Add a Burger</h2>
